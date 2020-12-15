@@ -1,9 +1,10 @@
 import uuidv4 from "uuid/v4"
-import renderTodos from "./views"
-import getFilters from "./filters"
+// import renderTodos from "./views"
+// import getFilters from "./filters"
 
-// let todos = [] //todos is assigned an empty array returned from the fxn or an array(s) of todos
+let todos = []
 
+//create todo
 const createTodo = (todos, text) => {
     todos.push({
             id: uuidv4(),
@@ -15,8 +16,8 @@ const createTodo = (todos, text) => {
 }
 
 // Fetching already created todos
-// getSavedTodos
-const getSavedTodos = () => {
+// loadTodos
+const loadTodos = () => {
     const todosJSON = localStorage.getItem('todos')
     try {
         return todosJSON ? JSON.parse(todosJSON) : [] //if (todosJSON !== null) execute 'a' else 'b'
@@ -25,8 +26,11 @@ const getSavedTodos = () => {
     }
 }
 
+//exposeTodos
+const exposeTodos = () => todos
+
 // Save todos to localStorage
-const saveTodos = (todos) => {
+const saveTodos = () => {
         localStorage.setItem('todos', JSON.stringify(todos))
 }
 
@@ -49,6 +53,34 @@ const saveTodos = (todos) => {
 //     }
 // }
 
-export { getSavedTodos, createTodo }
+export { loadTodos, createTodo, exposeTodos }
+
+//Setup the empty todos array
+
+//loadTodos
+//Arguments: none
+//Return value: none
+
+//saveTodos
+//Arguments: none
+//Return value: none
+
+//getTodos
+//Arguments: none
+//Return value: todos array
+
+//createTodo
+//Arguments: todo text
+//Return value : none
+
+//removeTodo
+//Arguments: id of todo to remove
+//Remove value : none
+
+//toggleTodo
+//Arguments: id of todo to toggle
+//Return value: none
+
+//Make sure to call loadTodos and setup the exports
 
 
