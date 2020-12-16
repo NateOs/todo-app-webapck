@@ -1,18 +1,23 @@
-// const filters = { //an object for matching values
-//     searchText: '',
-//     hideCompleted: false
-// }
+const filters = { //an object for matching values
+    searchText: '',
+    hideCompleted: false
+}
 
-// const getFilters = () => {  
-//     return filters
-// }
+const getFilters = () => {  
+    return filters
+}
 
-// const setFilters = (updates) => {
-//     if (typeof updates === 'string')
-//     filters.searchText = updates
-// }
+const setFilters = (updates) => {
+    if (typeof updates.searchText === 'string') {
+        filters.searchText = updates.searchText
+    }
 
-// export { getFilters, setFilters }
+    if (typeof updates.hideCompleted === 'boolean') {
+        filters.hideCompleted = updates.hideCompleted
+    }
+}
+
+export { getFilters, setFilters }
 
 // //Setup filters default object
 

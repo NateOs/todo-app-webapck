@@ -1,19 +1,17 @@
-import uuidv4 from "uuid/v4"
-// import renderTodos from "./views"
-// import getFilters from "./filters"
 
 let todos = []
 
-//create todo
-const createTodo = (todos, text) => {
-    todos.push({
-            id: uuidv4(),
-            text: text,
-            completed: false
-        })
-    saveTodos(todos)
-    renderTodos(todos, getFilters())
-}
+
+// //create todo
+// const createTodo = (todos, text) => {
+//     todos.push({
+//             id: uuidv4(),
+//             text: text,
+//             completed: false
+//         })
+//     saveTodos(todos)
+//     renderTodos(todos, getFilters())
+// }
 
 // Fetching already created todos
 // loadTodos
@@ -26,13 +24,15 @@ const loadTodos = () => {
     }
 }
 
-//exposeTodos
+todos = loadTodos()     
+
+// exposeTodos
 const exposeTodos = () => todos
 
-// Save todos to localStorage
-const saveTodos = () => {
-        localStorage.setItem('todos', JSON.stringify(todos))
-}
+// // Save todos to localStorage
+// const saveTodos = () => {
+//         localStorage.setItem('todos', JSON.stringify(todos))
+// }
 
 // //removetodos by id
 // const removeTodo = (id) => {
@@ -43,17 +43,19 @@ const saveTodos = () => {
 //     }
 // }
 
-//toggleTodo
-// const toggleTodo = (id) => {  //this functions sets the completed status of a todo to its opposite, either true or false, the result is toggled by the checkbox
-//     const TodoIndex2 = todos.findIndex( (todo) => {
-//         return todo.id === id
-//     })
-//     if (TodoIndex2 > -1) {
-//         todos[TodoIndex2].completed = !todos[TodoIndex2].completed
-//     }
-// }
+toggleTodo
+const toggleTodo = (id) => {  //this functions sets the completed status of a todo to its opposite, either true or false, the result is toggled by the checkbox
+    const TodoIndex2 = todos.findIndex( (todo) => {
+        return todo.id === id
+    })
+    if (TodoIndex2 > -1) {
+        todos[TodoIndex2].completed = !todos[TodoIndex2].completed
+    }
+}
 
-export { loadTodos, createTodo, exposeTodos }
+
+
+export { exposeTodos }
 
 //Setup the empty todos array
 
