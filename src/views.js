@@ -1,5 +1,5 @@
 import { getFilters } from "./filters"
-import { exposeTodos, toggleTodo, saveTodos } from "./todos"
+import { exposeTodos, toggleTodo, saveTodos, removeTodo } from "./todos"
  
 const todos = exposeTodos()
 const filters = getFilters()

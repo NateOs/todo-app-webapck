@@ -37,14 +37,14 @@ todos = loadTodos()
 // exposeTodos
 const exposeTodos = () => todos
 
-// //removetodos by id
-// const removeTodo = (id) => {
-//     const TodoIndex = todos.findIndex( (todo) =>  todo.id === id)
+//removetodos by id
+const removeTodo = (id) => {
+    const TodoIndex = todos.findIndex( (todo) =>  todo.id === id)
 
-//     if (TodoIndex > -1) {
-//         todos.splice(TodoIndex, 1)
-//     }
-// }
+    if (TodoIndex > -1) {
+        todos.splice(TodoIndex, 1)
+    }
+}
 
 // toggleTodo
 const toggleTodo = (id) => {  //this functions sets the completed status of a todo to its opposite, either true or false, the result is toggled by the checkbox
@@ -58,7 +58,7 @@ const toggleTodo = (id) => {  //this functions sets the completed status of a to
 
 
 
-export { exposeTodos, createTodo, toggleTodo, saveTodos }
+export { exposeTodos, createTodo, toggleTodo, saveTodos, removeTodo }
 
 //Setup the empty todos array
 
