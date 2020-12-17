@@ -1,7 +1,8 @@
 import { getFilters } from "./filters"
-import { exposeTodos } from "./todos"
-
+import { exposeTodos, toggleTodo, saveTodos } from "./todos"
+ 
 const todos = exposeTodos()
+const filters = getFilters()
 
 //Get the DOM elements for an individual note
 //generateTodoDOM

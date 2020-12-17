@@ -4,6 +4,11 @@ import { getFilters } from './filters'
 
 let todos = []
 
+// Save todos to localStorage
+const saveTodos = () => {
+    localStorage.setItem('todos', JSON.stringify(todos))
+}
+
 //create todo
 const createTodo = (todos, text) => {
     const filters = getFilters()
@@ -32,11 +37,6 @@ todos = loadTodos()
 // exposeTodos
 const exposeTodos = () => todos
 
-// Save todos to localStorage
-const saveTodos = () => {
-        localStorage.setItem('todos', JSON.stringify(todos))
-}
-
 // //removetodos by id
 // const removeTodo = (id) => {
 //     const TodoIndex = todos.findIndex( (todo) =>  todo.id === id)
@@ -58,7 +58,7 @@ const toggleTodo = (id) => {  //this functions sets the completed status of a to
 
 
 
-export { exposeTodos, createTodo, toggleTodo }
+export { exposeTodos, createTodo, toggleTodo, saveTodos }
 
 //Setup the empty todos array
 
