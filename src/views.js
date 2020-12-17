@@ -32,8 +32,8 @@ const generateTodoDOM = (todo) => {
     
     //Setup container
     
-    todoEl.classList.add('list-item')
-    containerEl.classList.add('list-item__container')
+    todoEl.classList.add('.list-item')
+    containerEl.classList.add('.list-item__container')
     // todoEl.appendChild(containerEl)
     containerEl.appendChild(todoEl)
     
@@ -97,17 +97,3 @@ const renderTodos = () => {
 
 
 export { renderTodos }
-
-// //renderTodos
-// //Arguments: none
-// //Return value: none
-
-// //generateTodoDOM
-// //Arguments: todo
-// //Return value: the todo element
-
-// //generateSummaryDOM
-// //Arguments: incompleteTodos
-// //Return value: the summary element
-
-// //Setup the exports

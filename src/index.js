@@ -1,5 +1,5 @@
 import { renderTodos } from "./views"
-import { exposeTodos, createTodo } from "./todos"
+import { exposeTodos, createTodo, loadTodos } from "./todos"
 import { getFilters, setFilters } from "./filters"
 
 const filters = getFilters()
@@ -30,6 +30,13 @@ document.querySelector('#new-todo').addEventListener('submit',  (e) => {
 document.querySelector('#hide-completed').addEventListener('change',  (e) => {
     filters.hideCompleted = e.target.checked
     renderTodos(todos, filters)
+})
+
+window.addEventListener('storage', (e) => {
+    if (e.key === 'todos') {
+        loadTodos()
+        renderTodos()
+    }
 })
 
 
