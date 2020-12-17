@@ -30,9 +30,12 @@ const generateTodoDOM = (todo) => {
     containerEl.appendChild(todoText)
     
     //Setup container
+    
     todoEl.classList.add('list-item')
     containerEl.classList.add('list-item__container')
-    todoEl.appendChild(containerEl)
+    // todoEl.appendChild(containerEl)
+    containerEl.appendChild(todoEl)
+    
 
     //removetodos button
     delTodo.textContent = 'Remove'

@@ -1,4 +1,5 @@
 import { renderTodos } from "./views"
+import { exposeTodos, createTodo } from "./todos"
 
 renderTodos()
 // //getting search value
@@ -9,17 +10,17 @@ renderTodos()
 //     renderTodos(todos, filters)
 // })
 
-// //adding todo
-// document.querySelector('#new-todo').addEventListener('submit',  (e) => {
-//     e.preventDefault() //remove default browser behaviour
+//adding todo
+document.querySelector('#new-todo').addEventListener('submit',  (e) => {
+    e.preventDefault() //remove default browser behaviour
 
-//     const text = e.target.elements.text.value.trim() //remove empty spaces from text
-//     if (text.length > 0) {
-//         let todos = exposeTodos()
-//         createTodo(todos, text)
-//     e.target.elements.text.value = '' //clears the textbox after saving a todo entry
-//     }       
-// })
+    const text = e.target.elements.text.value.trim() //remove empty spaces from text
+    if (text.length > 0) {
+        let todos = exposeTodos()
+        createTodo(todos, text)
+    e.target.elements.text.value = '' //clears the textbox after saving a todo entry
+    }       
+})
 
 // document.querySelector('#hide-completed').addEventListener('change',  (e) => {
 //     filters.hideCompleted = e.target.checked

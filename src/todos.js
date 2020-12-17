@@ -1,17 +1,20 @@
+import { v4 as uuidv4 } from 'uuid';
+import { renderTodos } from './views'
+import { getFilters } from './filters'
 
 let todos = []
 
-
-// //create todo
-// const createTodo = (todos, text) => {
-//     todos.push({
-//             id: uuidv4(),
-//             text: text,
-//             completed: false
-//         })
-//     saveTodos(todos)
-//     renderTodos(todos, getFilters())
-// }
+//create todo
+const createTodo = (todos, text) => {
+    const filters = getFilters()
+    todos.push({
+            id: uuidv4(),
+            text: text,
+            completed: false
+        })
+    saveTodos(todos)
+    renderTodos(todos, filters)
+}
 
 // Fetching already created todos
 // loadTodos
@@ -29,10 +32,10 @@ todos = loadTodos()
 // exposeTodos
 const exposeTodos = () => todos
 
-// // Save todos to localStorage
-// const saveTodos = () => {
-//         localStorage.setItem('todos', JSON.stringify(todos))
-// }
+// Save todos to localStorage
+const saveTodos = () => {
+        localStorage.setItem('todos', JSON.stringify(todos))
+}
 
 // //removetodos by id
 // const removeTodo = (id) => {
@@ -43,7 +46,7 @@ const exposeTodos = () => todos
 //     }
 // }
 
-toggleTodo
+// toggleTodo
 const toggleTodo = (id) => {  //this functions sets the completed status of a todo to its opposite, either true or false, the result is toggled by the checkbox
     const TodoIndex2 = todos.findIndex( (todo) => {
         return todo.id === id
@@ -55,7 +58,7 @@ const toggleTodo = (id) => {  //this functions sets the completed status of a to
 
 
 
-export { exposeTodos }
+export { exposeTodos, createTodo, toggleTodo }
 
 //Setup the empty todos array
 
