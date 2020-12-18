@@ -67,9 +67,9 @@ const generateSummaryDOM = (incompleteTodos) => {
 //renderTodos that are completed or not
 const renderTodos = () => {
     const filteredTodos = todos.filter((todo) => {
-        const filters = getFilters()
-        const searchTextMatch = todo.text.toLowerCase().includes(filters.searchText.toLowerCase()) //includes returns a matching object of a todo that was searched
-        const hideCompletedMatch = !filters.hideCompleted || !todo.completed //returns either true or false 
+        const { searchText, hideCompleted } = getFilters() //destructured
+        const searchTextMatch = todo.text.toLowerCase().includes(searchText.toLowerCase()) //includes returns a matching object of a todo that was searched
+        const hideCompletedMatch = !hideCompleted || !todo.completed //returns either true or false 
         
         return searchTextMatch && hideCompletedMatch
     })

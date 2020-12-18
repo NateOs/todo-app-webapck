@@ -7,12 +7,12 @@ const getFilters = () => {
     return filters
 }
 
-const setFilters = (updates) => {
-    if (typeof updates.searchText === 'string') {
+const setFilters = ({ searchText, hideCompleted }) => { //destructuring applied
+    if (typeof searchText === 'string') {
         filters.searchText = updates.searchText
     }
 
-    if (typeof updates.hideCompleted === 'boolean') {
+    if (typeof hideCompleted === 'boolean') {
         filters.hideCompleted = updates.hideCompleted
     }
 }
