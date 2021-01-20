@@ -28,7 +28,7 @@ const generateTodoDOM = (todo) => {
 
     //todotext
     todoText.appendChild(delTodo)
-    containerEl.appendChild(todoText)
+    todoEl.appendChild(todoText)
     
     //Setup container
     
@@ -47,7 +47,7 @@ const generateTodoDOM = (todo) => {
         renderTodos(todos, filters)
     })
 
-    return todoText
+    return containerEl
 }
 
 
